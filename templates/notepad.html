@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Notepad{% endblock %}
+
+{% block content %}
+<div class="container pt-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="card notepad-card shadow-lg" style="border-radius: 1.25rem; overflow: hidden;">
+        
+        <!-- Card Body -->
+        <div class="card-body p-0">
+          <!-- Auto-resizing textarea -->
+          <textarea
+            id="note"
+            class="form-control border-0 p-3"
+            rows="8"
+            placeholder="Write something meaningful..."
+            oninput="autoResize(this)"
+            style="overflow:hidden; min-height:300px; width: 100%; resize:none; border-radius: 0;"
+          ></textarea>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer bg-transparent d-flex justify-content-between align-items-center flex-wrap" style="border-radius: 0 0 1.25rem 1.25rem;">
+          <div class="hint mb-2 mb-md-0">Auto-saved locally</div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-secondary btn-modern" onclick="clearNote()">
+              <i class="bi bi-trash"></i>
+            </button>
+            <button class="btn btn-sm btn-primary btn-modern" onclick="saveNote()">
+              <i class="bi bi-check2"></i> Save
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

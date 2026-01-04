@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}AI Chat{% endblock %}
+
+{% block content %}
+<div class="chat-page">
+
+    <div class="chat-header">
+        <h2>🤖 AI Assistant</h2>
+        <p class="subtitle">Ask questions. Get smart answers.</p>
+    </div>
+
+    <div id="chat-messages" class="chat-messages">
+        <div class="message ai">
+            👋 Hi! How can I help you today?
+        </div>
+    </div>
+
+    <form id="chat-form" class="chat-form">
+        <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+            autocomplete="off"
+            required
+        >
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+{% endblock %}

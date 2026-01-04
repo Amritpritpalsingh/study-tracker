@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block content %}
+<div class="todo-container">
+    <h2>📝 Todo List</h2>
+    <p class="subtitle">Stay organized, stay productive</p>
+
+    <ul id="Todo-List"></ul>
+
+    <form method="post" action="/note&do/todo/add" class="todo-form">
+        <input type="text" placeholder="Add a new task..." name="todo" id="todo" required>
+        <button type="submit" class="add-btn-text">
+            + <span>Add</span>
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}
